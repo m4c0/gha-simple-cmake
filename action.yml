@@ -5,6 +5,9 @@ inputs:
     description: 'CMake configuration to use (Debug, Release, MinSizeRel, and RelWithDebInfo)'
     required: true
     default: 'Release'
+  extra_configure_flags:
+    description: 'Flags to be sent to CMake'
+    required: false
 outputs:
   build_dir:
     description: 'Build directory'
