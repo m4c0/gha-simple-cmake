@@ -1,0 +1,14 @@
+name: 'Simple CMake'
+description: 'Configure, build and test a repository using CMake'
+inputs:
+  config:
+    description: 'CMake configuration to use (Debug, Release, MinSizeRel, and RelWithDebInfo)'
+    required: true
+    default: 'Release'
+outputs:
+  build_dir:
+    description: 'Build directory'
+runs:
+  using: 'node12'
+  main: 'index.js'
+
