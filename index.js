@@ -26,7 +26,9 @@ async function run() {
 }
 
 try {
-  run();
+  run().catch(error => {
+    core.setFailed(error.message);
+  });
 } catch (error) {
   core.setFailed(error.message);
 }
