@@ -6,7 +6,10 @@ inputs:
     required: true
     default: 'Release'
   extra_configure_flags:
-    description: 'Flags to be sent to CMake'
+    description: 'Flags to be sent to CMake for configuring'
+    required: false
+  extra_build_flags:
+    description: 'Flags to be sent to CMake for building'
     required: false
 outputs:
   build_dir:

@@ -9,13 +9,14 @@ async function run() {
 
   const config = core.getInput('config');
   const flags = core.getInput('extra_configure_flags') || '';
+  const build_flags = core.getInput('extra_build_flags') || '';
 
   await core.group("Configuring CMake", async () => {
     return await exec.exec(`cmake -DCMAKE_BUILD_TYPE=${config} -S . -B build ${flags}`);
   });
 
   await core.group("Building package using CMake", async () => {
-    return await exec.exec(`cmake --build build --config ${config}`);
+    return await exec.exec(`cmake --build build --config ${config} ${build_flags}`);
   });
 
   await core.group("Testing package using CTest", async () => {
