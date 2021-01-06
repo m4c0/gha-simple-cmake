@@ -5,6 +5,12 @@ inputs:
     description: 'CMake configuration to use (Debug, Release, MinSizeRel, and RelWithDebInfo)'
     required: true
     default: 'Release'
+  source_dir:
+    description: 'Directory containing the root CMakeLists.txt - defaults to "."'
+    required: false
+  build_dir:
+    description: 'Directory which will contain the output - defaults to "build"'
+    required: false
   extra_configure_flags:
     description: 'Flags to be sent to CMake for configuring'
     required: false
