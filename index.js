@@ -21,8 +21,8 @@ async function run() {
     return await exec.exec(`cmake --build ${build} --config ${config} ${build_flags}`);
   });
 
-  await core.group("Testing package using CTest", async () => {
-    return await exec.exec('ctest');
+  await core.group("Testing package using Test", async () => {
+    return await exec.exec('ctest', [], { cwd: build });
   });
 
   core.setOutput('build_dir', build);
